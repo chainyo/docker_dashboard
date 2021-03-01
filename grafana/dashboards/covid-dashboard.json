@@ -1,0 +1,228 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1,
+    "links": [],
+    "panels": [
+      {
+        "datasource": "my-sql",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "graph": false,
+                "legend": false,
+                "tooltip": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": true
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "graph": {},
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "right"
+          },
+          "tooltipOptions": {
+            "mode": "single"
+          }
+        },
+        "pluginVersion": "7.4.3",
+        "targets": [
+          {
+            "format": "time_series",
+            "group": [],
+            "metricColumn": "country",
+            "queryType": "randomWalk",
+            "rawQuery": false,
+            "rawSql": "SELECT\n  date_covid AS \"time\",\n  country AS metric,\n  people_fully_vaccinated\nFROM data\nORDER BY date_covid",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "people_fully_vaccinated"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "data",
+            "timeColumn": "date_covid",
+            "timeColumnType": "date",
+            "where": []
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "People Fully VAccinated per Country",
+        "type": "timeseries"
+      },
+      {
+        "datasource": "my-sql",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "graph": false,
+                "legend": false,
+                "tooltip": false
+              },
+              "lineInterpolation": "smooth",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": true
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "id": 2,
+        "options": {
+          "graph": {},
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "right"
+          },
+          "tooltipOptions": {
+            "mode": "single"
+          }
+        },
+        "pluginVersion": "7.4.3",
+        "targets": [
+          {
+            "format": "time_series",
+            "group": [],
+            "metricColumn": "country",
+            "queryType": "randomWalk",
+            "rawQuery": false,
+            "rawSql": "SELECT\n  date_covid AS \"time\",\n  country AS metric,\n  daily_vaccinations\nFROM data\nORDER BY date_covid",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "daily_vaccinations"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "data",
+            "timeColumn": "date_covid",
+            "timeColumnType": "date",
+            "where": []
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Daily Vaccinations per Country",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": false,
+    "schemaVersion": 27,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "2020-12-13T00:00:00.000Z",
+      "to": "2021-02-24T00:00:00.000Z"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "COVID DASHBOARD",
+    "uid": "Sg9O3wsMz",
+    "version": 1
+  }

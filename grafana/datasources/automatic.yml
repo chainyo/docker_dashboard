@@ -1,0 +1,11 @@
+apiVersion: 1
+
+datasources:
+  - name: my-sql
+    type: mysql
+    access: proxy
+    password: isen-brief
+    user: root
+    database: covid
+    url: my-sql
+    isDefault: true

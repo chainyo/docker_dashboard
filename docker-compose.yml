@@ -9,7 +9,7 @@ services:
       - MYSQL_ROOT_PASSWORD=isen-brief
       - MYSQL_DATABASE=covid
     volumes:
-      - ./data.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./mysql/data.sql:/docker-entrypoint-initdb.d/init.sql
   grafana:
     image: grafana/grafana
     links:

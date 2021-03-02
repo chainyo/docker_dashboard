@@ -48,6 +48,8 @@ You are now connected to your `Grafana portal`. There is one dashboard pre-loade
 
 ![Grafana Home](resources/grafana_home.png)
 
+If the dashboard is not shown under the `Recently viewed dashboards` menu, you need to go in `Dashboards` then `Manage` on the left menu (look at the 4 squares on the left).
+
 You can click on it and you will access to 2 pre-loaded panels.
 
 ![Grafana Panels](resources/grafana_panels.png)
